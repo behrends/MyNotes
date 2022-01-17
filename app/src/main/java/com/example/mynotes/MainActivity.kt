@@ -3,6 +3,7 @@ package com.example.mynotes
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
@@ -10,9 +11,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val title = findViewById<EditText>(R.id.editNoteTitle)
         val button = findViewById<Button>(R.id.button)
         button.setOnClickListener {
-            Toast.makeText(this, "Mit Listener!", Toast.LENGTH_LONG).show()
+            val noteTitle = title.text.toString()
+            Toast.makeText(this, noteTitle, Toast.LENGTH_LONG).show()
         }
     }
 }
