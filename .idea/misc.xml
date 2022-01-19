@@ -5,7 +5,7 @@
       <map>
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.17777777777777778" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.17777777777777778" />
-        <entry key="app/src/main/res/layout/activity_edit.xml" value="0.13722826086956522" />
+        <entry key="app/src/main/res/layout/activity_edit.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.335" />
       </map>
     </option>

@@ -1,5 +1,6 @@
 package com.example.mynotes
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -18,7 +19,8 @@ class MainActivity : AppCompatActivity() {
             if(noteTitle.trim().isEmpty()) {
                 binding.editNoteTitle.error = "Titel darf nicht leer sein."
             } else {
-                Toast.makeText(this, noteTitle, Toast.LENGTH_LONG).show()
+                val intent = Intent(this, EditActivity::class.java)
+                startActivity(intent)
             }
         }
     }
