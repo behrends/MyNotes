@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
                 binding.editNoteTitle.error = "Titel darf nicht leer sein."
             } else {
                 val intent = Intent(this, EditActivity::class.java)
+                intent.putExtra("NOTE_TITLE", noteTitle)
                 startActivity(intent)
             }
         }
