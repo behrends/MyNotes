@@ -15,7 +15,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         binding.button.setOnClickListener {
             val noteTitle = binding.editNoteTitle.text.toString()
-            Toast.makeText(this, noteTitle, Toast.LENGTH_LONG).show()
+            if(noteTitle.trim().isEmpty()) {
+                binding.editNoteTitle.error = "Titel darf nicht leer sein."
+            } else {
+                Toast.makeText(this, noteTitle, Toast.LENGTH_LONG).show()
+            }
         }
     }
 }
