@@ -13,4 +13,10 @@
         android:layout_height="wrap_content"
         android:text="Hier erscheint der Titel"/>
 
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Löschen" />
+
 </LinearLayout>

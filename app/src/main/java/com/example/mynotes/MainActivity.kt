@@ -1,9 +1,11 @@
 package com.example.mynotes
 
+import android.app.Activity
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
+import androidx.activity.result.ActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatActivity
 import com.example.mynotes.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -21,8 +23,19 @@ class MainActivity : AppCompatActivity() {
             } else {
                 val intent = Intent(this, EditActivity::class.java)
                 intent.putExtra("NOTE_TITLE", noteTitle)
-                startActivity(intent)
+                startForResult.launch(intent)
             }
         }
     }
+
+    private val startForResult =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                val intent = result.data
+                // Alternativ in Kotlin: intent?.getBooleanExtra(...)!!
+                if(intent != null && intent.getBooleanExtra("DELETE_NOTE", false)) {
+                    binding.editNoteTitle.setText("")
+                }
+            }
+        }
 }
