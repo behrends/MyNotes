@@ -9,7 +9,11 @@
         android:id="@+id/homeFragment"
         android:name="com.example.mynotes.HomeFragment"
         android:label="HomeFragment"
-        tools:layout="@layout/fragment_home"/>
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_editFragment"
+            app:destination="@id/editFragment" />
+    </fragment>
     <fragment
         android:id="@+id/editFragment"
         android:name="com.example.mynotes.EditFragment"

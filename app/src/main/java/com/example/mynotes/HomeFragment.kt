@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 
 class HomeFragment : Fragment() {
     override fun onCreateView(
@@ -21,7 +22,7 @@ class HomeFragment : Fragment() {
             if(noteTitle.trim().isEmpty()) {
                 editText.error = "Titel darf nicht leer sein."
             } else {
-                Toast.makeText(context, "BUTTON CLICKED!", Toast.LENGTH_LONG).show()
+                view.findNavController().navigate(R.id.action_homeFragment_to_editFragment)
             }
         }
         return view;
