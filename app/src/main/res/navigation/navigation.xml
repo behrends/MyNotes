@@ -10,4 +10,9 @@
         android:name="com.example.mynotes.HomeFragment"
         android:label="HomeFragment"
         tools:layout="@layout/fragment_home"/>
+    <fragment
+        android:id="@+id/editFragment"
+        android:name="com.example.mynotes.EditFragment"
+        android:label="EditFragment"
+        tools:layout="@layout/fragment_edit"/>
 </navigation>
